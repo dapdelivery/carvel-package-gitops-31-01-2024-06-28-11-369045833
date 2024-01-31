@@ -1,0 +1,13 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+    name: where-for-dinner-notify
+spec:
+    serviceAccountName: default
+    packageRef:
+        refName: where-for-dinner-notify.my-apps.tap
+        versionSelection:
+            constraints: 20240131070246.0.0+build.02e9424
+    values:
+        - secretRef:
+            name: where-for-dinner-notify
